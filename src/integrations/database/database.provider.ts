@@ -5,6 +5,7 @@ export const databaseProviders = [
   {
     provide: 'SEQUELIZE',
     useFactory: async () => {
+      // TODO: Adjusts these value to .env
       const sequelize = new Sequelize({
         dialect: 'mysql',
         host: '127.0.0.1',
