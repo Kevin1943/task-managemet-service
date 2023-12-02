@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize-typescript';
-import { Task } from '../task/entities/task.entity';
+import { Task } from './../../services/tasks/entities/task.entity';
 
 export const databaseProviders = [
   {
@@ -7,14 +7,15 @@ export const databaseProviders = [
     useFactory: async () => {
       const sequelize = new Sequelize({
         dialect: 'mysql',
-        host: 'localhost',
+        host: '127.0.0.1',
         port: 3306,
-        username: 'root',
+        username: 'dev',
         password: 'password',
-        database: 'nest',
+        database: 'develop',
       });
       sequelize.addModels([Task]);
       await sequelize.sync();
       return sequelize;
     },
-  }
+  },
+];
