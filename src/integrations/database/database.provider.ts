@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize-typescript';
 import { Task } from './../../services/tasks/entities/task.entity';
+import { User } from 'src/services/users/entities/user.entity';
 
 export const databaseProviders = [
   {
@@ -14,7 +15,7 @@ export const databaseProviders = [
         password: 'password',
         database: 'develop',
       });
-      sequelize.addModels([Task]);
+      sequelize.addModels([Task, User]);
       await sequelize.sync();
       return sequelize;
     },

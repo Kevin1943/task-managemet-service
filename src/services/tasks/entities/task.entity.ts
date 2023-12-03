@@ -1,4 +1,11 @@
-import { Table, Column, Model } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  BelongsTo,
+  ForeignKey,
+} from 'sequelize-typescript';
+import { User } from 'src/services/users/entities/user.entity';
 
 export enum TaskStatus {
   PENDING = 'Pending',
@@ -19,4 +26,11 @@ export class Task extends Model {
 
   @Column
   status: TaskStatus;
+
+  @ForeignKey(() => User)
+  @Column({ field: 'userId' })
+  userId: number; // User ID stored in my Database
+
+  @BelongsTo(() => User)
+  user: User;
 }
