@@ -1,5 +1,5 @@
-import { IsNotEmpty } from 'class-validator';
-import { TaskStatus } from '../entities/task.entity';
+import { IsNotEmpty, IsDate } from 'class-validator';
+import { Type } from 'class-transformer';
 
 export class CreateTaskDto {
   // TODO: Adjusts validation
@@ -10,8 +10,8 @@ export class CreateTaskDto {
   description: string;
 
   @IsNotEmpty()
-  dueDate: string;
-
-  // @IsNotEmpty()
-  status: TaskStatus;
+  @Type(() => Date)
+  @IsDate()
+  dueDate: Date;
+  /*example for duedate format : "YYYY/MM/DD" */
 }

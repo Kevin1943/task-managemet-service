@@ -11,30 +11,16 @@ export class UsersService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    console.log(
-      '🚀 ~ file: users.service.ts:14 ~ UsersService ~ create ~ createUserDto:',
-      createUserDto,
-    );
     return await this.usersRepository.create({ ...createUserDto });
   }
 
   async findOneById(id: number) {
-    console.log(
-      '🚀 ~ file: users.service.ts:22 ~ UsersService ~ findOneById ~ id:',
-      id,
-    );
-
     return await this.usersRepository.findOne({
       where: { id },
     });
   }
 
   async findByUsername(username: string) {
-    console.log(
-      '🚀 ~ file: users.service.ts:19 ~ UsersService ~ findByUsername ~ username:',
-      username,
-    );
-
     return await this.usersRepository.findOne({
       where: { username },
     });

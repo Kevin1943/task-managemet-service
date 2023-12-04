@@ -23,10 +23,6 @@ export class DoesUserExist implements CanActivate {
     const userExist = await this.userService.findByUsername(
       request.body.username,
     );
-    console.log(
-      '🚀 ~ file: doesUserExist.guard.ts:26 ~ DoesUserExist ~ validateRequest ~ userExist:',
-      userExist,
-    );
     if (userExist) {
       throw new ForbiddenException('This username already exist');
     }
