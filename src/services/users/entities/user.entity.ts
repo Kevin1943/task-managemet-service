@@ -13,7 +13,4 @@ export class User extends Model {
 
   @Column
   lastName: string;
-
-  // @HasMany(() => Task)
-  // tasks: Task[];
 }

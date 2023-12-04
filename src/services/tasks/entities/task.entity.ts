@@ -29,7 +29,7 @@ export class Task extends Model {
 
   @ForeignKey(() => User)
   @Column({ field: 'userId' })
-  userId: number; // User ID stored in my Database
+  userId: number;
 
   @BelongsTo(() => User)
   user: User;
