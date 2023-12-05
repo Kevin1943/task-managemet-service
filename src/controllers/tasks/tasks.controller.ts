@@ -8,11 +8,13 @@ import {
   Delete,
   UseGuards,
   Request,
+  Query,
 } from '@nestjs/common';
 import { TasksService } from '../../services/tasks/service/tasks.service';
 import { CreateTaskDto } from '../../services/tasks/dtos/create-task.dto';
 import { UpdateTaskDto } from '../../services/tasks/dtos/update-task.dto';
 import { AuthGuard } from '@nestjs/passport';
+import { QueryTaskDto } from 'src/services/tasks/dtos/query-params-task-dto';
 
 @Controller('tasks')
 export class TasksController {
@@ -26,8 +28,8 @@ export class TasksController {
 
   @UseGuards(AuthGuard('jwt'))
   @Get()
-  findAll(@Request() req) {
-    return this.tasksService.findAll(req.user);
+  findAll(@Request() req, @Query() query: QueryTaskDto) {
+    return this.tasksService.findAll(req.user, query);
   }
 
   @UseGuards(AuthGuard('jwt'))

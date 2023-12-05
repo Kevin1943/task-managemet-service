@@ -80,7 +80,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0LXVzZXJuYW1lIiwiZmlyc3ROYW1lIjoicmFuZG9tRmlyc3RuYW1lIiwibGFzdE5hbWUiOiJyYW5kb21MYXN0bmFtZSIsImNyZWF0ZWRBdCI6IjIwMjMtMTItMDRUMTM6NDI6MzUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTItMDRUMTM6NDI6MzUuMDAwWiIsImlhdCI6MTcwMTcwMTE1NCwiZXhwIjoxNzAxNzAxNzU0fQ.KP9iIkIGI6xD9PMtLAo5NVSXJEC4EYm2rHBgl4bL5u0",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0LXVzZXJuYW1lIiwiZmlyc3ROYW1lIjoicmFuZG9tRmlyc3RuYW1lIiwibGFzdE5hbWUiOiJyYW5kb21MYXN0bmFtZSIsImNyZWF0ZWRBdCI6IjIwMjMtMTItMDVUMTQ6MTQ6NDIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTItMDVUMTQ6MTQ6NDIuMDAwWiIsImlhdCI6MTcwMTc5MjQ2MywiZXhwIjoxNzAxNzkzMDYzfQ.8m8VQzJ1Vn1pTrE_JCEvYupcjVn043pVib0b38Alpdo",
 									"type": "string"
 								}
 							]
@@ -94,7 +94,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/tasks",
+							"raw": "http://localhost:3000/tasks?startDate=2012/2/20&endDate=2023/6/20&statuses=[\"Pending\",\"In progress\",\"Completed\"]",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -102,6 +102,20 @@
 							"port": "3000",
 							"path": [
 								"tasks"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2012/2/20"
+								},
+								{
+									"key": "endDate",
+									"value": "2023/6/20"
+								},
+								{
+									"key": "statuses",
+									"value": "[\"Pending\",\"In progress\",\"Completed\"]"
+								}
 							]
 						}
 					},
@@ -115,7 +129,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0LXVzZXJuYW1lIiwiZmlyc3ROYW1lIjoicmFuZG9tRmlyc3RuYW1lIiwibGFzdE5hbWUiOiJyYW5kb21MYXN0bmFtZSIsImNyZWF0ZWRBdCI6IjIwMjMtMTItMDRUMTM6NDI6MzUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTItMDRUMTM6NDI6MzUuMDAwWiIsImlhdCI6MTcwMTY5OTI1NywiZXhwIjoxNzAxNjk5MzE3fQ.ya93rEeFmLxlb-eHUNr3Yxp_PDKDxN8cpAac2MBxUnk",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJ0ZXN0LXVzZXJuYW1lIiwiZmlyc3ROYW1lIjoicmFuZG9tRmlyc3RuYW1lIiwibGFzdE5hbWUiOiJyYW5kb21MYXN0bmFtZSIsImNyZWF0ZWRBdCI6IjIwMjMtMTItMDVUMTQ6MTQ6NDIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjMtMTItMDVUMTQ6MTQ6NDIuMDAwWiIsImlhdCI6MTcwMTc4NzY3MywiZXhwIjoxNzAxNzg4MjczfQ.t5Tl55GhVTI3rR7gN65EgsoKEmQXdeToIzHBaRCp43g",
 									"type": "string"
 								}
 							]
@@ -130,7 +144,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"task\",\r\n    \"description\": \"some-desription\",\r\n    \"dueDate\": \"2005-05-19\"\r\n}",
+							"raw": "{\r\n    \"title\": \"task\",\r\n    \"description\": \"some-desription\",\r\n    \"dueDate\": \"2222/05/22\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
