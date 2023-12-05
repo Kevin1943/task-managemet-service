@@ -39,8 +39,8 @@ $ docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw 
 # If face a sequelize access deinied error which is expected, because i hard coded DB credentials 
 # -- SequelizeAccessDeniedError: Access denied for user 'dev'@'172.17.0.1' (using password: YES) --
 # run the followed below commands one by one to create a credentials
+docker ps //copy container id
 docker exec -it <CONTAINER_ID>  mysql -uroot -p
-
 Enter password: my-secret-pw
 
 CREATE USER 'dev'@'172.17.0.1' IDENTIFIED BY 'password';
@@ -73,11 +73,10 @@ $ npm run start:prod
 ```bash
 # unit tests
 $ npm run test
-
 # NOTE, most unit test still havn't been add
 ```
 
-## SERVICES/ postman collection
+## SERVICES/ postman collection (is in git folder at root level)
 ```
   /auth
     -signup (required sign up atleast one account) for JWT token in others routes
