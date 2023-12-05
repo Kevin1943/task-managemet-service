@@ -26,8 +26,8 @@ export class TasksController {
 
   @UseGuards(AuthGuard('jwt'))
   @Get()
-  findAll() {
-    return this.tasksService.findAll();
+  findAll(@Request() req) {
+    return this.tasksService.findAll(req.user);
   }
 
   @UseGuards(AuthGuard('jwt'))

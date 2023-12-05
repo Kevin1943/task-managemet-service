@@ -26,9 +26,32 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Pre-required
+- docker
+- node v20.10.0 (recommend)
+- npm v10.2.3 (recommend)
+
 ## Installation
+```bash
+# install/run sql instance from docker
+$ docker run --name some-mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql
+
+# If face a sequelize access deinied error which is expected, because i hard coded DB credentials 
+# -- SequelizeAccessDeniedError: Access denied for user 'dev'@'172.17.0.1' (using password: YES) --
+# run the followed below commands one by one to create a credentials
+docker exec -it <CONTAINER_ID>  mysql -uroot -p
+
+Enter password: my-secret-pw
+
+CREATE USER 'dev'@'172.17.0.1' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'dev'@'172.17.0.1' WITH GRANT OPTION;
+flush privileges;
+CREATE DATABASE develop;
+exit
+```
 
 ```bash
+# install packages
 $ npm install
 ```
 
@@ -51,11 +74,20 @@ $ npm run start:prod
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
+# NOTE, most unit test still havn't been add
+```
 
-# test coverage
-$ npm run test:cov
+## SERVICES/ postman collection
+```
+  /auth
+    -signup (required sign up atleast one account) for JWT token in others routes
+    -signin (for JWT token)
+  /task
+    -get all (task according Log-in user JWT token)
+    -get one by task id
+    -create task
+    -update one by task id
+    -delete task by task id
 ```
 
 ## Support

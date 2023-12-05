@@ -32,8 +32,8 @@ export class TasksService {
     });
   }
 
-  async findAll() {
-    return await this.tasksRepository.findAll();
+  async findAll(user: User) {
+    return await this.tasksRepository.findAll({ where: { userId: user.id } });
   }
 
   async findOne(id: number, user: User) {
